@@ -53,7 +53,7 @@ app.post("/api/signin", async(req, res)=>{
   await newUser.save()
   
   generateCookie(res, newUser._id)
-  res.json({User: newUser})
+  res.json(newUser)
 
 })
 

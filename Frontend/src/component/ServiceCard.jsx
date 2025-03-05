@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import Input from "./input";
 import Button from "./Button.jsx";
 import axios from "axios";
+import { useNavigate, Navigate } from "react-router-dom";
+import userStore from "../store/userStore.js";
 const ServiceCard = () => {
+    const { authenticated, gUser, login } = userStore();
+
+    console.log(authenticated, gUser);
+
   const [type, setType] = useState("signin");
+const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +33,11 @@ const ServiceCard = () => {
       formData
     );
 
-    console.log(response.data);
+    console.log(response.data.user);
+  if (response.status === 200) {
+    login(response.data)
+    navigate("/");
+  }
   }
 
   return (
