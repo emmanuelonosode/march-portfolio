@@ -9,7 +9,7 @@ function Input({ label, onChange, value, placeHolder, type, id }) {
           value={value}
           onChange={onChange}
           id={id}
-          className="bg-black border block p-1  w-[100%]"
+          className="bg-black border block p-1  w-full"
           type={type}
           placeholder={placeHolder}
         />
