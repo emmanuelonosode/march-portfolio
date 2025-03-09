@@ -1,0 +1,40 @@
+.some {
+  width: 100% !important;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 6rem;
+  font-style: oblique;
+}
+.things {
+  color: rgb(117, 85, 26);
+}
+q{
+    font-size: 1.6rem;
+    max-width: 400px;
+}
+cite{
+    display: block;
+}
+.test {
+  display: flex;
+  gap: 1rem;
+  margin-block: 5rem;
+  flex-wrap: wrap;
+}
+
+.test img {
+  max-width: 400px;
+  max-height: 400px;
+  display: block;
+}
+.test .test-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (max-width: 900px) {
+  q{
+        font-size: 1.3rem;
+
+  }
+}

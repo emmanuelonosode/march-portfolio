@@ -1,10 +1,16 @@
-/** @type {import('tailwindcss').Config} */
+/**
+ * 
+imp 
+@type {import('tailwindcss').Config} */
+// import {fontFamily} from "tailwindcss/defaulTheme";
 export default {
-  content: [
-    "./index.html", "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ["goshan-regular", "san-serif"],
+      },
+    },
   },
   plugins: [],
 };

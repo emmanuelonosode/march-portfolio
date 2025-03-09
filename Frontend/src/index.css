@@ -2,8 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+@font-face {
+  font-family: "goshan";
+  src: url(/goshan.otf);
+}
+
+@font-face {
+  font-family:"goshan-regular";
+  src: url(/goshan2.otf);
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+h1 {
+  font-size: 80px;
+  font-weight: regular;
+  line-height: 100%;
+  font-family: goshan;
+}
+h2{
+  font-family: goshan-regular;
+  font-size: 40px;
+  line-height: 100%;
+}
+h3{
+  font-size: 60px;
+  font-family: goshan;
+  line-height: 100%;
+}
+h4{
+  font-family: goshan;
+  font-size: 20px;
+}
+p{
+  font-size: 16px;
+    font-family: goshan-regular;
+    opacity: .9;
+
+}
+small{
+  font-size: 14px;
+
+}
+span{
+  color: purple;
+}
+.container{
+  max-width: 1200px;
+  width: 90%;
+  margin-inline: auto;
+}
+.float{
+  position: fixed;
+  top: 50%;
+  left: 30%;
+  z-index: -2;
+  
+}
+.float:hover{
+  color: red;
 }

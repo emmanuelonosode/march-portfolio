@@ -1,19 +1,17 @@
 import React from 'react'
-import ServiceCard from "./component/ServiceCard.jsx"
-import HomePage from './component/HomePage.jsx';
+import "./index.css"
 import {BrowserRouter, Route,  Routes} from 'react-router-dom'
+import HomePage from './Pages/HomePage.jsx';
+import Blog from './Pages/Blog.jsx';
 function App() {
   return (
     <>
-     
-        <BrowserRouter>
+       <BrowserRouter>
           <Routes>
-              <Route path='/signin' element={<ServiceCard />} />
-              <Route path='/' element={<HomePage />} />
-          
+             <Route path='/' element={<HomePage/>} />
+             <Route path='/blog' element={<Blog/>}/>
           </Routes>
         </BrowserRouter>{" "}
-    
     </>
   );
 }
