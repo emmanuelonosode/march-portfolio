@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../component/nav.jsx";
 import Button from "../component/Button.jsx";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { easeInOut, hover, motion, useScroll, useTransform } from "framer-motion";
 import { useState } from "react";
 import Onions from "../component/onions.jsx";
 import {
@@ -30,6 +30,25 @@ function HomePage() {
   function handleTesti(id) {
     setShowTesti((prev) => (prev === id ? null : id));
   }
+ const childVariant={
+    hover:{
+      rotate:90,
+      scale:1.1,
+      transition:{
+        duration:0.3,
+        ease: easeInOut
+      }
+    }
+  }
+const parentVariant={
+  hover:{
+    backgroundColor:"white",
+    fill:"black",
+    
+  }
+}
+
+
   return (
     <>
       <Nav scrillFunction={scrollToSetion} />
@@ -392,7 +411,10 @@ function HomePage() {
       </div>
       <div className=" container justify-between flex flex-wrap gap-10">
         {contact.map(({ svg, name, desc, detail }, index) => (
-          <div key={index} className="max-w-80 border-l-2 border-gray-600 px-4 mb-16">
+          <div
+            key={index}
+            className="max-w-80 border-l-2 border-gray-600 px-4 mb-16"
+          >
             <svg
               width="49"
               height="49"
@@ -415,12 +437,12 @@ function HomePage() {
         <div className="container space-y-20  text-white">
           <h3>Emmanuel Onosode.</h3>
 
-          <div className="flex justify-between max-md:flex-col">
-            <div className="flex flex-col gap-10 justify-between">
+          <div className="flex gap-12 justify-between max-md:flex-col">
+            <div className="flex flex-col gap-2 justify-between">
               <p>
                 <small>Follow Me </small>
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-6">
                 {socials.map(({ label, href }) => (
                   <div className="flex gap-2 items-center">
                     <a href={href}>{label.toUpperCase()}</a>
@@ -438,7 +460,7 @@ function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="flex  flex-col gap-6 justify-between">
+            <div className="flex  flex-col gap-2 justify-between">
               <p>
                 <p>
                   <small>Stay Connected w/ me</small>
@@ -447,27 +469,37 @@ function HomePage() {
               <div>
                 <form className="relative w-80 max-md:max-w-80 min-w-60">
                   <input
-                    className="bg-black border-b w-full  text-white outline-none py-2 "
+                    className="bg-black border-b border-gray-500 w-full  text-white outline-none py-2 "
                     placeholder="Enter your email"
                     type="email"
                     name="email"
                     id="email"
                   />
-                  <svg
-                    className="cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 rotate-45"
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="24px"
-                    viewBox="0 -960 960 960"
-                    width="24px"
-                    fill="#fff"
+                  <motion.button
+                    whileHover="hover"
+                    variants={parentVariant}
+                    className="top-4 rounded-full bg-transparent fill-white px-4 absolute right-0"
                   >
-                    <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
-                  </svg>
+                    <motion.svg
+                      initial={{
+                        rotate:45
+                      }}
+                      variants={childVariant}
+                      className="fill-inherit rotate-45"
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#fff"
+                    >
+                      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z" />
+                    </motion.svg>
+                  </motion.button>
                 </form>
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap  justify-between">
+          <div className="flex border-t border-gray-500 flex-wrap  justify-between">
             <p>
               <small>&copy; {new Date().getFullYear()}</small>
             </p>

@@ -65,3 +65,10 @@ span{
 .float:hover{
   color: red;
 }
+
+.ql-editor img{
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: fill;
+}

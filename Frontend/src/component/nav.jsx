@@ -91,7 +91,7 @@ function Nav({ scrollToSetion }) {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className={`fixed  w-screen pt-[64px] bg-slate-50 z-10 top-0 left-0 transform transition-transform duration-300 ease-in-out `}
+        className={`fixed  w-screen pt-[64px] bg-slate-50 z-10 top-0 left-0  `}
       >
         <div className="container">
           {navItems.map(({ label, href }) => (
@@ -131,6 +131,7 @@ function Nav({ scrollToSetion }) {
                 scale: 0.8,
                 color: "#ffffff",
                 backgroundColor: "#000000",
+                gap:"25px"
               }}
               transition={{ duration: 0.3 }}
               key={label}
